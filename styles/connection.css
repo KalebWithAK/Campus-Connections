@@ -1,0 +1,33 @@
+main {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    width: 700px;
+    gap: 32px;
+}
+
+h2 {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+img {
+    width: 300px;
+    height: auto;
+}
+
+.flex {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.info {
+    margin-top: -16px;
+}
+.info * {
+    margin: 16px 0;
+}
+
+.details {
+    grid-column: 1 / 3;
+}
