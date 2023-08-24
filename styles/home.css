@@ -7,3 +7,14 @@ main {
 p {
     margin: 16px 0;
 }
+
+@media screen and (max-width: 844px) {
+    main {
+        margin: 0;
+        width: calc(100vw - 64px)
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}
