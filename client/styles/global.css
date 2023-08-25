@@ -93,6 +93,14 @@ html, body {
     align-items: center;
   }
 
+  footer a {
+    display: inline-block;
+    margin: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
   .align-right {
     text-align: right;
   }
