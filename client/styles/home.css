@@ -2,7 +2,9 @@ main {
     width: 580px;
     margin: 100px auto;
     font-size: 22px;
+    height: fit-content;
 }
+
 
 p {
     margin: 16px 0;
