@@ -39,16 +39,16 @@ img {
         align-items: center;
         width: fit-content;
         height: fit-content;
-        margin: 0 auto 32px;
+        margin: 32px auto;
     }
 
-    button {
+    button, .button {
         width: 100px;
     }
-    button:hover {
+    button:hover, .button:hover {
         width: 120px;
     }
-    button:active {
+    button:active, .button:active {
         width: 100px;
     }
 }

@@ -40,8 +40,11 @@ textarea {
 }
 
 @media screen and (max-width: 844px) {
+    body {
+        height: fit-content;
+    }
     form {
-        margin: auto;
+        margin: 25px auto;
         grid-template-columns: 100px 200px;
     }
     input, textarea {

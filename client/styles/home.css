@@ -1,6 +1,6 @@
 main {
     width: 580px;
-    margin: 100px auto;
+    margin: -200px auto 0;
     font-size: 22px;
     height: fit-content;
 }
@@ -12,8 +12,8 @@ p {
 
 @media screen and (max-width: 844px) {
     main {
-        margin: 0;
-        width: calc(100vw - 64px)
+        margin: 50px 0 120px;
+        width: calc(100vw - 64px);
     }
 
     h2 {
