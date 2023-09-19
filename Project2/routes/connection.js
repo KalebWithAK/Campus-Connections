@@ -26,7 +26,7 @@ router.get('/new', (req, res) => {
 router.post('/new', (req, res) => {
     createConnection(req.body)
 
-    return res.redirect('/')
+    return res.redirect('/connection')
 })
 
 router.get('/edit/:connection_id', (req, res) => {
@@ -39,6 +39,13 @@ router.post('/edit/:connection_id', (req, res) => {
     editConnection(req.params.connection_id, req.body)
 
     return res.redirect('/connection/id/' + req.params.connection_id)
+})
+
+// http://localhost:8084/connection/delete/
+router.get('/delete/:connection_id', (req, res) => {
+    removeConnection(req.params.connection_id)
+
+    return res.redirect('/connection')
 })
 
 module.exports = { connection_router: router }

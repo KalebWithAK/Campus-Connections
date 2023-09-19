@@ -73,8 +73,8 @@ function editConnection(connection_id, { connection_name, topic, details, date, 
 function removeConnection(id) {
     const index = connections.indexOf(getConnectionById(id))
 
-    if (index) {
-        courses.splice(index, 1)
+    if (index != -1) {
+        connections.splice(index, 1)
         return true
     }
 
