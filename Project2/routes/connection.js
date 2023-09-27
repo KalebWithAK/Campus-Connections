@@ -41,7 +41,7 @@ router.get('/edit/:connection_id', (req, res) => {
 router.post('/edit/:connection_id', (req, res) => {
     editConnection(req.params.connection_id, req.body)
 
-    return res.redirect('/connection/')
+    return res.redirect('/connection/id/' + req.params.connection_id)
 })
 
 router.get('/delete/:connection_id', (req, res) => {
