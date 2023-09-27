@@ -1,6 +1,6 @@
 const connections = [
     {
-        connection_id: 1,
+        connection_id: '1',
         connection_name: 'Basketball',
         topic: 'health',
         details: '5 on 5 tournament',
@@ -12,7 +12,7 @@ const connections = [
         location: 'Belk Gym'
     },
     {
-        connection_id: 2,
+        connection_id: '2',
         connection_name: 'Study hall',
         topic: 'academic',
         details: 'Study, do homework, or come hang out',
@@ -24,7 +24,7 @@ const connections = [
         location: 'Library'
     },
     {
-        connection_id: 3,
+        connection_id: '3',
         connection_name: 'Muay Thai',
         topic: 'health',
         details: 'Learn self defense and a martial art',
@@ -37,7 +37,7 @@ const connections = [
     },
 
     {
-        connection_id: 4,
+        connection_id: '4',
         connection_name: 'Tutoring',
         topic: 'academic',
         details: 'Get some assistance with difficult classes',
@@ -48,7 +48,7 @@ const connections = [
         img: 'https://media.istockphoto.com/id/1335050732/photo/businessman-using-a-computer-to-document-management-concept-online-documentation-database-and.jpg?s=1024x1024&w=is&k=20&c=qIRYTFJ-JFZPUlWjVG8xiykypAgn_ca76wfZvFFX274='
     },
     {
-        connection_id: 5,
+        connection_id: '5',
         connection_name: 'Cooking Class',
         topic: 'health',
         details: 'Learn to cook with your friends',
@@ -60,7 +60,7 @@ const connections = [
         location: 'UREC'
     },
     {
-        connection_id: 6,
+        connection_id: '6',
         connection_name: 'Code and Chill',
         topic: 'academic',
         details: 'Code, music, bean bag chairs, pizza, and a movie',

@@ -32,16 +32,18 @@ router.post('/new', (req, res) => {
 router.get('/edit/:connection_id', (req, res) => {
     const connection = getConnectionById(req.params.connection_id)
 
-    return res.render('pages/editConnection', { connection })
+
+    if (connection) {
+        return res.render('pages/editConnection', { connection })
+    }
 })
 
 router.post('/edit/:connection_id', (req, res) => {
     editConnection(req.params.connection_id, req.body)
 
-    return res.redirect('/connection/id/' + req.params.connection_id)
+    return res.redirect('/connection/')
 })
 
-// http://localhost:8084/connection/delete/
 router.get('/delete/:connection_id', (req, res) => {
     removeConnection(req.params.connection_id)
 
