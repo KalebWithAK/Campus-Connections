@@ -17,31 +17,31 @@
             <h2>Create a Connection</h2>
 
             <label>Title</label>
-            <input type="text" placeholder="title" name="connection_name">
+            <input type="text" placeholder="title" name="connection_name" required>
 
             <label>Topic</label>
-            <input type="text" placeholder="topic" name="topic">
+            <input type="text" placeholder="topic" name="topic" required>
             
             <label>Host</label>
-            <input type="text" placeholder="host" name="host_name">
+            <input type="text" placeholder="host" name="host_name" required>
 
             <label>Details</label>
-            <textarea placeholder="" name="details"></textarea>
+            <textarea placeholder="" name="details" required minlength = "10"></textarea>
 
             <label>Location</label>
-            <input type="text" placeholder="location" name="location">
+            <input type="text" placeholder="location" name="location" required>
 
             <label>Date</label>
-            <input type="date" name="date">
+            <input type="date" name="date" required>
 
             <label>Start</label>
-            <input type="time" name="start_time">
+            <input type="time" name="start_time" required>
 
             <label>End</label>
-            <input type="time" name="end_time">
+            <input type="time" name="end_time" required>
 
             <label>Image URL</label>
-            <input type="text" placeholder="image url" name="img">
+            <input type="text" placeholder="image url" name="img" required>
             
             <input type="submit" class="button">
         </form>

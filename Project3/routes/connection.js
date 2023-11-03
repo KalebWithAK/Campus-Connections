@@ -10,10 +10,11 @@ router.get('/new', (req, res) => res.render('pages/newConnection'))
 
 router.post('/new', controller.save)
 
-router.get('/edit/:connection_id', controller.edit)
+router.get('/:connection_id/edit', controller.edit)
 
-router.put('/edit/:connection_id', controller.update)
+router.put('/:connection_id', controller.update)
 
-router.get('/delete/:connection_id', controller.delete)
+router.delete('/:connection_id', controller.delete)
 
 module.exports = router
+

@@ -13,11 +13,12 @@
     <main>
         <h2><%= connection.connection_name %></h2>
 
+<form>
 
-        <div class="flex">
-            <a class="button" href="/connection/edit/<%= connection._id %>">Edit</a>
-            <a class="button" href="/connection/delete/<%= connection._id %>">Delete</a>
-        </div>
+            <button type = "submit" formmethod = "GET" formaction = "/connection/<%= connection.id%>/edit">Edit</button>
+            <button type = "submit" formmethod = "POST" formaction = "/connection/<%= connection.id%>?_method=DELETE">Delete</button>
+        
+        </form>
 
         <div class="info">
             <p>Hosted by <em><%= connection.host_name %></em></p>

@@ -13,35 +13,35 @@
 
     <main>
         <!--topic, title, host, details, where, when, start, end, image url-->
-        <form action="/connection/edit/<%= connection._id %>" method="put">
+        <form method="post" action="/connection/<%= connection._id%>?_method=PUT">
             <h2>Edit Connection</h2>
 
             <label>Title</label>
-            <input type="text" placeholder="title" name="connection_name" value="<%= connection.connection_name %>">
+            <input type="text" placeholder="title" name="connection_name" value="<%= connection.connection_name %>" required>
 
             <label>Topic</label>
-            <input type="text" placeholder="topic" name="topic" value="<%= connection.topic %>">
+            <input type="text" placeholder="topic" name="topic" value="<%= connection.topic %>" required>
             
             <label>Host</label>
-            <input type="text" name="host_name" placeholder="host" value="<%= connection.host_name %>">
+            <input type="text" name="host_name" required placeholder="host" value="<%= connection.host_name %>">
 
             <label>Details</label>
-            <textarea name="details"><%= connection.details %></textarea>
+            <textarea name="details" required minlength = "10"><%= connection.details %></textarea>
 
             <label>Location</label>
-            <input type="text" placeholder="location" name="location" value="<%= connection.location %>">
+            <input type="text" placeholder="location" name="location" value="<%= connection.location %>" required>
 
             <label>Date</label>
-            <input type="date" name="date" value="<%= connection.date %>">
+            <input type="date" name="date" value="<%= connection.date %>" required>
 
             <label>Start</label>
-            <input type="time" name="start_time" value="<%= connection.start_time %>">
+            <input type="time" name="start_time" value="<%= connection.start_time %>" required>
 
             <label>End</label>
-            <input type="time" name="end_time" value="<%= connection.end_time %>">
+            <input type="time" name="end_time" value="<%= connection.end_time %>" required>
 
             <label>Image URL</label>
-            <input type="text" placeholder="image url" name="img" value="<%= connection.img %>">
+            <input type="text" placeholder="image url" name="img" value="<%= connection.img %>" required>
             
             <input type="submit" class="button">
         </form>
