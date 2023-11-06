@@ -12,7 +12,7 @@ router.post('/new', controller.save)
 
 router.get('/edit/:connection_id', controller.edit)
 
-router.put('/edit/:connection_id', controller.update)
+router.post('/edit/:connection_id', controller.update)
 
 router.get('/delete/:connection_id', controller.delete)
 
