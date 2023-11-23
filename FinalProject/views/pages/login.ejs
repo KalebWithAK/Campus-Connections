@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Connections - New Connection</title>
+
+    <link rel='stylesheet' href='/public/styles/global.css'>
+    <link rel="stylesheet" href="/public/styles/login.css">
+</head>
+<body>
+    <%- include('../components/header') %>
+
+    <main>
+        <!--topic, title, host, details, where, when, start, end, image url-->
+        <form action="/user/login" method="POST">
+            <h2>Login</h2>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <div class="messages">
+                <% if (locals.errorMessages.length > 0) { %> 
+                    <% locals.errorMessages.forEach(err => { %> 
+                        <p class="error"><%= err %></p>
+                    <% }) %>
+                <% } %>
+            </div>
+            
+            <input type="submit" class="button">
+        </form>
+    </main>
+
+    <%- include('../components/footer') %>
+</body>
+</html>

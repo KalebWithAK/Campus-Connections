@@ -63,7 +63,7 @@ const connections = [
         connection_id: '6',
         connection_name: 'Code and Chill',
         topic: 'academic',
-        details: 'Code, music, bean bag chairs, pizza, and a movie',
+        details: 'Coding, music, lounge chairs, refreshments, and theatrics.',
         date: '',
         start_time: '7:00pm',
         end_time: '11:59pm',

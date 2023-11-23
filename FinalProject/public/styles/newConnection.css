@@ -1,0 +1,23 @@
+.messages {
+    grid-row: 11;
+    grid-column: 1 / 3;
+}
+
+.button {
+    grid-column: 1 / 3;
+    grid-row: 12;
+}
+
+@media screen and (max-width: 844px) {
+    body {
+        height: fit-content;
+    }
+    form {
+        margin: 25px auto;
+        grid-template-columns: 100px 200px;
+    }
+    input, textarea {
+        grid-column: 2;
+        width: 200px;   
+    }
+}

@@ -1,0 +1,14 @@
+main {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 0;
+    flex-direction: row;
+}
+
+ul {
+    margin: 8px 0;
+}
+li {
+    list-style: none;
+}

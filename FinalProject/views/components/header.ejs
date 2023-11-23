@@ -1,0 +1,23 @@
+<header>
+    <a href="/"><img src='/public/images/logo.png' alt="UNC Charlotte"></a>
+    <h1>Campus Connections</h1>
+    <nav>
+        <% if (locals.isAuthenticated == true) { %>
+            <p>Hi <%= locals.username %></p>|
+        <% } %>
+
+        <a href="/connection">Browse Connections</a>
+
+
+        <% if (locals.isAuthenticated == true) { %>
+            <a href="/connection/new">Create a Connection</a>
+            <a href="/user/profile">Profile</a>
+            <a href="/user/logout" class="logout">Logout</a>
+        <% } else { %>
+            <a href="/user/login">Login</a>
+            <a href="/user/register">Sign Up</a>
+        <% } %>
+        
+        
+    </nav>
+</header>
