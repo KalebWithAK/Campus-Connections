@@ -3,9 +3,8 @@ const Connection = require('./models/connection')
 
 exports.setLocals = (req, res, next) => {
     res.locals.isAuthenticated = req.session.user ? true : false
+    res.locals.user = req.session.user
     res.locals.username = req.session.username
-
-    //req.flash('error', 'validation error')
 
     res.locals.successMessages = req.flash('success')
     res.locals.errorMessages = req.flash('error')
@@ -18,7 +17,7 @@ exports.isAuthenticated = (req, res, next) => {
         return next()
     }
     else {
-        req.flash('error', 'guests cannot access that page')
+        req.flash('error', 'You must log in first')
         return res.redirect('/user/login')
     }
 }
@@ -28,7 +27,7 @@ exports.isGuest = (req, res, next) => {
         return next()
     }
     else {
-        req.flash('error', 'authenticated users cannot access that page')
+        req.flash('error', 'Authenticated users cannot access that page')
         return res.redirect('/user/profile')
     }
 }
@@ -48,14 +47,22 @@ exports.isHost = (req, res, next) => {
     .catch(err => next(err))
 }
 
+
 exports.isAuthorized = (req, res, next) => {
     if (res.locals.isHost) {
         return next()
     }
+    // user attempts to update or delete a connection that is not theirs
     else {
-        const err = { code: 401, message: 'Unauthorized access attempt' }
+        const err = { code: 401, message: 'Only the host can perform that action' }
         return next(err)
     }
+}
+
+exports.catch404 = (req, res, next) => {
+    const error = { code: 404, message: 'Page not found'}
+
+    return res.render('pages/error', { error })
 }
 
 exports.catchError = (err, req, res, next) => {
@@ -63,9 +70,5 @@ exports.catchError = (err, req, res, next) => {
         req.flash('error', err.message)
         res.redirect('back')
     }
-    else if (res.status(404)) {
-        const error = { code: 404, message: 'Page not found'}
-
-        return res.render('pages/error', { error })
-    }
 }
+

@@ -17,7 +17,15 @@
             <a href="/user/login">Login</a>
             <a href="/user/register">Sign Up</a>
         <% } %>
-        
-        
     </nav>
+
+    <% if (locals.errorMessages.length > 0) { %> 
+    <div class="error">
+            <% locals.errorMessages.forEach(err => { %> 
+                <p><%= err %></p>
+            <% }) %>
+        <button onclick="closeError()"><img src="/public/images/close.png"></button>
+    </div>
+    <% } %>
 </header>
+<script src="/public/js/global.js" defer></script>

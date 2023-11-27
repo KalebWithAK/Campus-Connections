@@ -1,5 +1,5 @@
 <tr>
-    <td><%= connection.title %></td>
+    <td><a href="/connection/id/<%= connection._id %>"><%= connection.title %></a></td>
     <td><%= connection.topic %></td>
     <td><div class='flex'>
         <a href="/connection/edit/<%= connection._id %>" class="button">Update</a>

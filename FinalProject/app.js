@@ -10,10 +10,11 @@ const flash = require('connect-flash')
 const mongoose = require('mongoose')
 
 
-const { catchError, setLocals } = require('./middleware')
+const { catchError, catch404, setLocals } = require('./middleware')
 const main_router  = require('./routes/main')
 const connection_router = require('./routes/connection')
 const user_router = require('./routes/user')
+const rsvp_router = require('./routes/rsvp')
 
 // server initialization
 const app = express()
@@ -37,6 +38,10 @@ mongoose.connect(mongoUrl, {
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(morgan('tiny'))
+app.use((req, res, next) => {
+    console.log(res.statusCode)
+    next()
+}) 
 app.use(methodOverride('_method'))
 app.use('/public', express.static(path.join(__dirname, 'public')))
 app.use(session({
@@ -49,17 +54,14 @@ app.use(session({
 app.use(flash())
 app.use(setLocals)
 
-// testing middleware
-app.use((req, res, next) => {
-    console.log('username:', req.session.username)
 
-    next()
-})
 
 // routers
 app.use('/', main_router)
 app.use('/connection/', connection_router)
 app.use('/user/', user_router)
+app.use('/rsvp/', rsvp_router)
 
 // error handling
+app.use(catch404)
 app.use(catchError)

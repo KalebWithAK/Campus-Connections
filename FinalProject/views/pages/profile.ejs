@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Connections - Home</title>
 
-    <link rel='stylesheet' href='/public/styles/global.css'>
-    <link rel="stylesheet" href="/public/styles/profile.css">
+    <link rel='stylesheet' href='/public/css/global.css'>
+    <link rel="stylesheet" href="/public/css/profile.css">
 </head>
 <body>
     <%- include('../components/header') %>
@@ -39,8 +39,8 @@
                 <th>Attending</th>
             </tr>
 
-            <% rsvps.forEach(r => { %>
-                <%- include('../components/rsvp', { rsvp: r }) %>
+            <% rsvps.forEach(rsvp => { %>
+                <%- include('../components/rsvp', { rsvp }) %>
             <% }) %>
         </table>
         <% } else { %>

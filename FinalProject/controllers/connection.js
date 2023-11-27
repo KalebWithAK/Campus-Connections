@@ -1,4 +1,5 @@
 const Connection = require('../models/connection')
+const Rsvp = require('../models/rsvp')
 const { ObjectId } = require('../utils')
 
 
@@ -24,7 +25,13 @@ exports.getConnection = (req, res, next) => {
     Connection.findById(connection_id)
     .then(connection => {
         if (connection) {
-            res.render('pages/connection', { connection })
+            Rsvp.find({ connection_id, status: 'yes' })
+            .then(rsvps => {
+                if (rsvps) {
+                    res.render('pages/connection', { connection, rsvp_count: rsvps.length })
+                }
+            })
+            .catch(err => next(err))
         }
     })
     .catch(err => next(err))
@@ -66,8 +73,7 @@ exports.update = (req, res, next) => {
             res.redirect('/connection/id/' + connection_id)
         }
         else {
-            const err = new Error('cannot find story with id ' + connection_id)
-            err.status = 404
+            const err = { code: 404, message: 'cannot find story with id ' + connection_id }
             next(err)
         }
    })

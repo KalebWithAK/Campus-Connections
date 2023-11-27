@@ -1,4 +1,5 @@
 const User = require('../models/user')
+const Connection = require('../models/connection')
 
 exports.authenticate = (req, res, next) => {
     const { email, password } = req.body
@@ -48,21 +49,23 @@ exports.profile = (req, res, next) => {
     User.findById(req.session.user)
     .then(user => {
         if (user) {
+            // get connections
             user.getConnections()
             .then(connections => {
                 if (connections) {
+                    // get rsvps
                     user.getRsvps()
                     .then(rsvps => {
                         if (rsvps) {
-                            rsvps = rsvps.map(r => {
-                                r.getConnection()
-                                .then(connection => {
-                                    return { ...rsvp, title: connection.title, topic: connection.topic }
-                                })
-                                .catch(err => next(err))
+                            console.log(rsvps)
+                            
+                            Connection.findById(rsvps[0]._id)
+                            .then(connection => {
+                                if (connection) {
+                                    console.log(connection)
+                                }
                             })
-
-                            res.render('./pages/profile', { user, connections, rsvps })
+                            .catch(err => next(err))
                         }
                     })
                     .catch(err => next(err))
