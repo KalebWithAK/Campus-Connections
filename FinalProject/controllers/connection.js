@@ -54,9 +54,9 @@ exports.edit = (req, res, next) => {
     .then(connection => {
         if (connection) {
             if (String(connection.user_id) === String(req.session.user)) {
-                res.render('pages/editConnection', { connection })
+                return res.render('pages/editConnection', { connection })
             } else {
-                res.redirect('/')
+                return res.redirect('/connection/id' + connection_id)
             }
         }
     })
@@ -70,7 +70,7 @@ exports.update = (req, res, next) => {
     Connection.findByIdAndUpdate(connection_id, connection)
     .then(results => {
         if (results) {
-            res.redirect('/connection/id/' + connection_id)
+            return res.redirect('/connection/id/' + connection_id)
         }
         else {
             const err = { code: 404, message: 'cannot find story with id ' + connection_id }
@@ -83,10 +83,22 @@ exports.update = (req, res, next) => {
 exports.delete = (req, res, next) => {
     const { connection_id } = req.params
 
-    Connection.findByIdAndDelete(connection_id)
-    .then(results => {
-        console.log(results)
-        res.redirect('/connection')
+    Rsvp.deleteMany({ connection_id })
+    .then(result => {
+        if (result) {
+            console.log(result)
+
+            Connection.findByIdAndDelete(connection_id)
+            .then(result => {
+                if (result) {
+                    console.log(result)
+                    return res.redirect('/connection')
+                }
+            })
+            .catch(err => next(err))
+        }
     })
     .catch(err => next(err))
+
+    
 }

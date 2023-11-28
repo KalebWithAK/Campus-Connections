@@ -31,7 +31,7 @@ html, body {
   overflow-x: hidden;
   box-sizing: border-box;
   background: var(--bg-color);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 20px;
   color: #c6c6c6;
   padding-bottom: 0;
@@ -44,6 +44,10 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
 }
 
 header, footer {
@@ -283,6 +287,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .rsvp .button:hover {
   width: 64px;
+}
+
+.center-text {
+  text-align: center;
 }
 
 

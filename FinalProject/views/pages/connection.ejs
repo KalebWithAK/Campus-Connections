@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Connections - Connection</title>
-    <link rel='stylesheet' href='/public/css/global.css'>
+<%- include('../components/head') %>
     <link rel="stylesheet" href="/public/css/connection.css">
 </head>
 <body>
@@ -14,13 +8,17 @@
         <h2><%= connection.title %></h2>
 
         <% if (locals.isHost == true) { %>
-            <div class="flex">
-                <a class="button" href="/connection/edit/<%= connection._id %>">Edit</a>
-                <a class="button red" href="/connection/delete/<%= connection._id %>">Delete</a>
+            <div class="rsvp">
+                <p class="center-text"><%= rsvp_count %> Attending</p>
+
+                <div class="flex">
+                    <a class="button" href="/connection/edit/<%= connection._id %>">Edit</a>
+                    <a class="button red" href="/connection/delete/<%= connection._id %>">Delete</a>
+                </div>
             </div>
         <% } else if (locals.isAuthenticated) { %>
             <div class="rsvp">
-                <p><%= rsvp_count %> attending</p>
+                <p><%= rsvp_count %> Attending</p>
                 <p>RSVP to attend</p>
                 <div class="flex">
                     <a href="/rsvp/user/<%= locals.user %>/connection/<%= connection._id %>/status/Yes/title/<%= connection.title %>/topic/<%= connection.topic %>" class="button">Yes</a>
