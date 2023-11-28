@@ -25,7 +25,7 @@ exports.getConnection = (req, res, next) => {
     Connection.findById(connection_id)
     .then(connection => {
         if (connection) {
-            Rsvp.find({ connection_id, status: 'yes' })
+            Rsvp.find({ connection_id, status: 'Yes' })
             .then(rsvps => {
                 if (rsvps) {
                     res.render('pages/connection', { connection, rsvp_count: rsvps.length })

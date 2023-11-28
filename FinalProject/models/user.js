@@ -38,7 +38,7 @@ userSchema.methods.getConnections = function() {
 
 // get user's rsvps
 userSchema.methods.getRsvps = function() {
-    return Rsvp.find({ user_id: this._id, status: 'yes' })
+    return Rsvp.find({ user_id: this._id, status: { '$ne': 'No' }})
 }
 
 module.exports = mongoose.model('User', userSchema)

@@ -67,6 +67,7 @@ exports.catch404 = (req, res, next) => {
 
 exports.catchError = (err, req, res, next) => {
     if (err) {
+        console.log(err)
         req.flash('error', err.message)
         res.redirect('back')
     }

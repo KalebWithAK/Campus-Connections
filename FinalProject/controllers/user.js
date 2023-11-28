@@ -58,14 +58,21 @@ exports.profile = (req, res, next) => {
                     .then(rsvps => {
                         if (rsvps) {
                             console.log(rsvps)
-                            
-                            Connection.findById(rsvps[0]._id)
+                            /*Connection.findById(rsvps[0]._id)
                             .then(connection => {
                                 if (connection) {
                                     console.log(connection)
+                                    return { 
+                                        title: connection.title, 
+                                        topic: connection.topic, 
+                                        status: rsvp.status, 
+                                        connection_id: rsvp.connection_id 
+                                    }
                                 }
                             })
-                            .catch(err => next(err))
+                            .catch(err => next(err))*/
+                            
+                            res.render('./pages/profile', { user, connections, rsvps })
                         }
                     })
                     .catch(err => next(err))

@@ -1,6 +1,9 @@
 main p {
     margin-bottom: 100px;
 }
+main h2 {
+    margin-bottom: 16px;
+}
 
 table {
     margin-bottom: 100px;
@@ -19,6 +22,7 @@ th {
 
 
 td {
+    padding: 4px;
     width: 200px;
     border-bottom: solid rgba(212,212,212, 0.5) 1px;
 }
