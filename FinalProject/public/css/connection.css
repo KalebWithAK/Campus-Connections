@@ -1,12 +1,23 @@
 main {
+    --border-color: rgba(255,255,255, 0.4);
+    --white: 255,255,255;
+    --border: solid 1px var(--border-color);
+
     display: grid;
     grid-template-rows: 0.5 1fr 1fr;
     grid-template-columns: repeat(2, 1fr);
     width: 700px;
     gap: 32px;
-    height: 70vh;
+    height: fit-content;
     padding: 0;
     overflow: hidden;
+    border: var(--border);
+    border-radius: 4px;
+    
+}
+
+main > * {
+    padding: 16px;
 }
 
 h2 {
