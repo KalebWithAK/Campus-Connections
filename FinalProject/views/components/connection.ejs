@@ -1,3 +1,44 @@
+
+    
 <li className="connection">
-    <a href="/connection/id/<%= connection._id %>"><%= connection.title %></a>
+    <div class="card">
+    <%const imageUrlRegex = /\.(jpeg|jpg|gif|png)$/i%>
+    <%const isValidImageUrl = imageUrlRegex.test(connection.img)%>
+    <%if(!imageUrlRegex.test(connection.img)) {%>
+        <a href="/connection/id/<%= connection._id %>" ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/800px-Image_not_available.png?20210219185637" class="cardImg"></a>
+    <%} else {%>
+        <a href="/connection/id/<%= connection._id %>" ><img src="<%=connection.img %> " class="cardImg"></a>
+    <%}%>
+    <br>
+    <div class="card-content">
+    <a href="/connection/id/<%= connection._id %>"><h2><%= connection.title %></h2></a>
+    <h3>When: <%= connection.date %> 
+    <br>From: 
+   
+    <%if(parseInt(connection.start_time) > 12) {%>
+        <% connection.start_timeMod = parseInt(connection.end_time) - 12  %>
+        <%= connection.start_timeMod %>:<%=connection.start_time.substring(3,5) %>PM
+     <%} else if(parseInt(connection.start_time) === 12) {%>
+        <%= connection.start_time%>PM %>
+    <%} else  {%>
+        <%= connection.start_time%>AM
+        <%}%>-
+    <%if(parseInt(connection.end_time) > 12) {%>
+            <% connection.end_timeMod = parseInt(connection.end_time) - 12  %>
+            <%= connection.end_timeMod %>:<%=connection.end_time.substring(3,5) %>PM
+    <%} else if(parseInt(connection.end_time) === 12) {%>
+            <%= connection.end_time%>PM %>
+    <%} else  {%>
+            <%= connection.end_time%>AM
+            <%}%>
+    
+
+
+    <br>
+</h3>
+    <p>
+    <%= connection.details.substring(0,66) %></p>
+    </div>
+</div>
+    
 </li>

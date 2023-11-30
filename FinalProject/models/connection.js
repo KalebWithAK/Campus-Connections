@@ -7,7 +7,7 @@ const connectionSchema = new mongoose.Schema({
     details: { type: String },
     location: { type: String },
     date: { type: String, required: [true, 'cannot be empty'] },
-    start_time: { type: String, required: [true, 'cannot be emtpy'] },
+    start_time: { type: String, required: [true, 'cannot be empty'] },
     end_time: { type: String, required: [true, 'cannot be empty'] },
     img: { type: String },
     user_id: { type: mongoose.Types.ObjectId },
@@ -15,3 +15,4 @@ const connectionSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Connection', connectionSchema)
+
