@@ -7,12 +7,16 @@
     <main>
         <% topics.forEach((t) => { %>
             <ul>
-                <h2><%= t.charAt(0).toUpperCase() + t.slice(1) %></h2>
+                
+                <h1 class="cardTitle"> <%= t.charAt(0).toUpperCase() + t.slice(1) %></h1>
                 <% connections.forEach((c) => { %>
+                    
                     <% if (c.topic === t) { %>
                         <%- include('../components/connection', { connection: c }) %>
+                    
                     <% } %>
                 <% }) %>
+            
             </ul>
         <% }) %>
     </main>

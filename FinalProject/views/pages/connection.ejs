@@ -33,7 +33,22 @@
         <div class="info">
             <p>Hosted by <em><%= connection.host %></em></p>
             <p><%= connection.date %></p>
-            <p><%= connection.start_time %> - <%= connection.end_time %></p>
+            <%if(parseInt(connection.start_time) > 12) {%>
+                <% connection.start_timeMod = parseInt(connection.end_time) - 12  %>
+                <%= connection.start_timeMod %>:<%=connection.start_time.substring(3,5) %>PM
+             <%} else if(parseInt(connection.start_time) === 12) {%>
+                <%= connection.start_time%>PM %>
+            <%} else  {%>
+                <%= connection.start_time%>AM
+                <%}%>-
+            <%if(parseInt(connection.end_time) > 12) {%>
+                    <% connection.end_timeMod = parseInt(connection.end_time) - 12  %>
+                    <%= connection.end_timeMod %>:<%=connection.end_time.substring(3,5) %>PM
+            <%} else if(parseInt(connection.end_time) === 12) {%>
+                    <%= connection.end_time%>PM %>
+            <%} else  {%>
+                    <%= connection.end_time%>AM
+                    <%}%>
             <p><%= connection.location %></p>
         </div>
 

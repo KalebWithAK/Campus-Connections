@@ -19,7 +19,7 @@ const rsvp_router = require('./routes/rsvp')
 // server initialization
 const app = express()
 const port = 8084
-const mongoUrl = 'mongodb://localhost:27017/final-project'
+const mongoUrl = 'mongodb://127.0.0.1:27017/final-project'
 app.set('view engine', 'ejs')
 
 // connect to db
