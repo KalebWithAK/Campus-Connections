@@ -16,9 +16,6 @@
             <input type="text" placeholder="topic" name="topic" required>
             
 
-            <label>Details</label>
-            <textarea placeholder="" name="details"></textarea>
-
             <label>Location</label>
             <input type="text" placeholder="location" name="location">
 
@@ -31,16 +28,11 @@
             <label>End</label>
             <input type="time" name="end_time" required>
 
-            <label>Image URL</label>
+            <label>Image</label>
             <input type="text" placeholder="image url" name="img">
 
-            <div class="messages">
-                <% if (locals.errorMessages.length > 0) { %> 
-                    <% locals.errorMessages.forEach(err => { %> 
-                        <p class="error"><%= err %></p>
-                    <% }) %>
-                <% } %>
-            </div>
+            <label>Details</label>
+            <textarea placeholder="" name="details"></textarea>
             
             <input type="submit" class="button">
         </form>
