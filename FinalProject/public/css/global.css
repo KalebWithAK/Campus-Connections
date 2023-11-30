@@ -276,7 +276,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .rsvp {
-  border: solid rgba(212,212,212, 0.6) 1px;
+  /* border: solid rgba(212,212,212, 0.6) 1px; */
   width: fit-content;
   height: fit-content;
   padding: 4px;

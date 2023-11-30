@@ -6,32 +6,14 @@
 
     <main>
         <h2><%= connection.title %></h2>
-
-        <% if (locals.isHost == true) { %>
-            <div class="rsvp">
-                <p class="center-text"><%= rsvp_count %> Attending</p>
-
-                <div class="flex">
-                    <a class="button" href="/connection/edit/<%= connection._id %>">Edit</a>
-                    <a class="button red" href="/connection/delete/<%= connection._id %>">Delete</a>
-                </div>
-            </div>
-        <% } else if (locals.isAuthenticated) { %>
-            <div class="rsvp">
-                <p><%= rsvp_count %> Attending</p>
-                <p>RSVP to attend</p>
-                <div class="flex">
-                    <a href="/rsvp/user/<%= locals.user %>/connection/<%= connection._id %>/status/Yes/title/<%= connection.title %>/topic/<%= connection.topic %>" class="button">Yes</a>
-                    <a href="/rsvp/user/<%= locals.user %>/connection/<%= connection._id %>/status/No/title/<%= connection.title %>/topic/<%= connection.topic %>" class="button red">No</a>
-                    <a href="/rsvp/user/<%= locals.user %>/connection/<%= connection._id %>/status/Maybe/title/<%= connection.title %>/topic/<%= connection.topic %>" class="button">Maybe</a>
-                </div>
-            </div>
+        <% if (connection.img) { %>
+            <img src="<%= connection.img %>" alt="<%= connection.location %>">
         <% } else { %>
             <div></div>
         <% } %>
 
         <div class="info">
-            <p>Hosted by <em><%= connection.host %></em></p>
+            <p>Hosted by <%= connection.host %></p>
             <p><%= connection.date %></p>
             <%if(parseInt(connection.start_time) > 12) {%>
                 <% connection.start_timeMod = parseInt(connection.end_time) - 12  %>
@@ -50,15 +32,30 @@
                     <%= connection.end_time%>AM
                     <%}%>
             <p><%= connection.location %></p>
+
+            <% if (locals.isHost == true) { %>
+                <div class="rsvp">
+                    <p><%= rsvp_count %> Attending</p>
+    
+                    <div class="flex">
+                        <a class="button" href="/connection/edit/<%= connection._id %>">Edit</a>
+                        <a class="button red" href="/connection/delete/<%= connection._id %>">Delete</a>
+                    </div>
+                </div>
+            <% } else if (locals.isAuthenticated) { %>
+                <div class="rsvp">
+                    <p><%= rsvp_count %> Attending</p>
+                    <p>RSVP to attend</p>
+                    <div class="flex">
+                        <a href="/rsvp/user/<%= locals.user %>/connection/<%= connection._id %>/status/Yes/title/<%= connection.title %>/topic/<%= connection.topic %>" class="button">Yes</a>
+                        <a href="/rsvp/user/<%= locals.user %>/connection/<%= connection._id %>/status/No/title/<%= connection.title %>/topic/<%= connection.topic %>" class="button red">No</a>
+                        <a href="/rsvp/user/<%= locals.user %>/connection/<%= connection._id %>/status/Maybe/title/<%= connection.title %>/topic/<%= connection.topic %>" class="button">Maybe</a>
+                    </div>
+                </div>
+            <% } else { %>
+                <div></div>
+            <% } %>
         </div>
-
-        <% if (connection.img) { %>
-            <img src="<%= connection.img %>" alt="<%= connection.location %>">
-        <% } else { %>
-            <div></div>
-        <% } %>
-
-        
 
         <% if (connection.details && connection.details.trim() !== '') { %>
             <div class="details">
