@@ -31,8 +31,8 @@
 
     <% if (locals.successMessages.length > 0) { %> 
         <div class="success">
-                <% locals.successMessages.forEach(suc => { %> 
-                    <p><%= suc %></p>
+                <% locals.successMessages.forEach(success => { %> 
+                    <p><%= success %></p>
                 <% }) %>
             <button onclick="closeSuccess()"><img src="/public/images/close.png"></button>
         </div>

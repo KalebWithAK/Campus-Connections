@@ -91,7 +91,7 @@ padding: 4px 8px 4px 16px;
 transition: var(--transition);
 opacity: 100%;
 }
-.error button, .error button:hover {
+.error button, .error button:hover{
 width: fit-content;
 height: fit-content;
 justify-self: end;
@@ -106,7 +106,12 @@ width: 24px;
 height: 24px;
 }
 .hidden {
-opacity: 0%;
+  opacity: 0%;
+  position: absolute;
+top: 100%;
+left: 0;
+gap: 16px;
+width: 100vw;
 }
 
 .success {

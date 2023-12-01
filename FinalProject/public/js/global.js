@@ -1,8 +1,8 @@
 function closeError() {
-    document.querySelector('.error').classList.add('hidden')
+    document.querySelector('.error').setAttribute('class', 'hidden')
 
 }
 
 function closeSuccess() {
-    document.querySelector('.success').classList.add('hidden')
+    document.querySelector('.success').setAttribute('class', 'hidden')
 }
