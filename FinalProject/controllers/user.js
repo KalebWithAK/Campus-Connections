@@ -38,6 +38,7 @@ exports.authenticate = (req, res, next) => {
 
 exports.new = (req, res, next) => {
     const user = new User(req.body)
+    req.flash('success','New User Created, Welcome!')
     user.save()
     .then(() => {
         this.authenticate(req, res, next)
