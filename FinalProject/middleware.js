@@ -17,7 +17,7 @@ exports.isAuthenticated = (req, res, next) => {
         return next()
     }
     else {
-        req.flash('error', 'You must log in first')
+        req.flash('error', 'You must login first!')
         return res.redirect('/user/login')
     }
 }

@@ -28,4 +28,13 @@
         <button onclick="closeError()"><img src="/public/images/close.png"></button>
     </div>
     <% } %>
+
+    <% if (locals.successMessages.length > 0) { %> 
+        <div class="success">
+                <% locals.successMessages.forEach(suc => { %> 
+                    <p><%= suc %></p>
+                <% }) %>
+            <button onclick="closeSuccess()"><img src="/public/images/close.png"></button>
+        </div>
+        <% } %>
 </header>

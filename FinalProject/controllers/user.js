@@ -16,7 +16,7 @@ exports.authenticate = (req, res, next) => {
                 else if (result) {
                     console.log(result)
                     // save user id in session
-                    req.flash('success', 'user authenticated')
+                    req.flash('success', 'Successful Login')
                     req.session.user = user._id
                     req.session.username = user.first_name
                     console.log(user._id)

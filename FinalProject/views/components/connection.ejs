@@ -5,7 +5,7 @@
     <%const imageUrlRegex = /\.(jpeg|jpg|gif|png)$/i%>
     <%const isValidImageUrl = imageUrlRegex.test(connection.img)%>
     <%if(!imageUrlRegex.test(connection.img)) {%>
-        <a class='img' href="/connection/id/<%= connection._id %>" ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/800px-Image_not_available.png?20210219185637" class="cardImg"></a>
+        <a class='img' href="/connection/id/<%= connection._id %>" ><img src="https://ucomm.charlotte.edu/sites/ucomm.charlotte.edu/files/styles/media_assets_thumbnail_16x9/public/media-assets/thumbnails/UNC%20Charlotte%20Primary%20Logo%20Black%20-%20PNG-01.png?itok=3NWXDBXI" style="object-fit: fill;" class="cardImg"></a>
     <%} else {%>
         <a class='img' href="/connection/id/<%= connection._id %>" ><img src="<%=connection.img %> " class="cardImg"></a>
     <%}%>
