@@ -2,7 +2,7 @@ const router = require('express').Router()
 const controller = require('../controllers/user')
 const { isAuthenticated, isGuest } = require('../middleware')
 const {loginLimiter} = require('../middleware/rateLimiter')
-const {validateLogin, validateSignUp,validateResults} = require('../middleware/validator')
+const {validateLogin, validateSignUp,validateResults, validateLoginSuccess} = require('../middleware/validator')
 
 router.get('/login', isGuest, (req, res) => res.render('./pages/login'))
 

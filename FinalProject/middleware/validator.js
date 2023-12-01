@@ -27,6 +27,11 @@ body('password','Password must be 8 to 64 characters').isLength({min: 8, max: 64
 exports.validateLogin = [body('email', 'Must be a valid email address').isEmail().trim().escape().normalizeEmail()
 ,body('password','Password incorrect').isLength({min: 8, max: 64})];
 
+exports.validateLoginSuccess = (req,res,next) =>{
+    req.flash('success','Log in successful');
+    return next();
+}
+
 //checks for errors and displays them
 exports.validateResults = (req,res,next) =>{
     let errors = validationResult(req);
@@ -40,9 +45,14 @@ exports.validateResults = (req,res,next) =>{
     }
 }
 
+
+var date = new Date().toLocaleDateString()
+
 exports.validateStory = [
+    body('topic','topic can not be empty').notEmpty().trim(),
     body('title','Title cannot be empty').notEmpty().trim().escape(),
-    body('details','Content must have atleast 10 characters').isLength({min: 10}).trim().escape(),
-    body('location','Location cannot be empty').notEmpty().trim().escape()
+    body('details','Content Error').trim().escape(),
+    body('img','Img Url Error').trim(),
+    body('date','Date cannot be before current date').isAfter(date)
 ];
 

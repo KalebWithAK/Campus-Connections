@@ -42,6 +42,7 @@ exports.save = (req, res, next) => {
     req.body.host = req.session.username
 
     const connection = new Connection(req.body)
+    req.flash('success','Story has been posted!')
     connection.save()
     .then(() => res.redirect('/connection'))
     .catch(err => next(err))
@@ -70,6 +71,7 @@ exports.update = (req, res, next) => {
     Connection.findByIdAndUpdate(connection_id, connection)
     .then(results => {
         if (results) {
+            req.flash('success', 'Successfully Updated')
             return res.redirect('/connection/id/' + connection_id)
         }
         else {
@@ -92,6 +94,7 @@ exports.delete = (req, res, next) => {
             .then(result => {
                 if (result) {
                     console.log(result)
+                    req.flash('success','Story has been deleted.')
                     return res.redirect('/connection')
                 }
             })
