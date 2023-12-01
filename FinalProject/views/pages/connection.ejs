@@ -14,7 +14,7 @@
 
         <div class="info">
             <p>Hosted by <%= connection.host %></p>
-            <p><%= connection.date %></p>
+            <p><%= connection.date.substring(5,10) %>-<%= connection.date.substring(0,4) %></p>
             <%if(parseInt(connection.start_time) > 12) {%>
                 <% connection.start_timeMod = parseInt(connection.end_time) - 12  %>
                 <%= connection.start_timeMod %>:<%=connection.start_time.substring(3,5) %>PM

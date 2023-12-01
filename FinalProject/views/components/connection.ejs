@@ -12,7 +12,7 @@
     <br>
     <div class="card-content">
     <a href="/connection/id/<%= connection._id %>"><h2><%= connection.title %></h2></a>
-        <h3><%= connection.date %> 
+        <h3><%= connection.date.substring(5,10) %>-<%= connection.date.substring(0,4) %>
         <br> 
             <%if(parseInt(connection.start_time) > 12) {%>
                 <% connection.start_timeMod = parseInt(connection.end_time) - 12  %>
