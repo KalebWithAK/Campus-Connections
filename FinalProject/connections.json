@@ -4,9 +4,9 @@
   },
   "title": "Final Project Review",
   "topic": "ITIS-4166",
-  "details": "This project is intended for you to complete the application you have been working on during this semester. \r\n\r\nFollow the assignment description on this page. \r\nAfter completing the assignment, submit the required files listed in the assignment description.\r\nPut Partner’s name in canvas comment\r\nIf you have questions, please post them on Piazza or come to office hours.\r\n\r\nAssignment late policy : This assignment is due by 11:59 pm on Friday, Dec 1, according to the Canvas system clock (note that this might be different than your clock!).  After this time, the assignment is considered late. An automatic late extension period will be granted until 11:59 pm Monday, Dec 4. Any late work submitted after the deadline (even if it is missed within seconds) will receive a 3%&amp;#x2F;day grade reduction. No submission will be accepted after Dec 4..",
+  "details": "This project is intended for you to complete the application you have been working on during this semester. \r\n\r\nFollow the assignment description on this page. \r\nAfter completing the assignment, submit the required files listed in the assignment description.\r\nPut Partner’s name in canvas comment\r\nIf you have questions, please post them on Piazza or come to office hours.\r\n\r\nAssignment late policy : This assignment is due by 11:59 pm on Friday, Dec 1, according to the Canvas system clock (note that this might be different than your clock!).  After this time, the assignment is considered late. An automatic late extension period will be granted until 11:59 pm Monday, Dec 4. Any late work submitted after the deadline (even if it is missed within seconds) will receive a 3%&amp;amp;#x2F;day grade reduction. No submission will be accepted after Dec 4..",
   "location": "fretwell 106",
-  "date": "2023-12-01",
+  "date": "2023-12-20",
   "start_time": "12:00",
   "end_time": "14:00",
   "img": "https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png",
@@ -20,32 +20,14 @@
   "_id": {
     "$oid": "6567c76f72b1b515701ff30a"
   },
-  "title": "Final Exam",
+  "title": "Final Exam!",
   "topic": "MATH-1242",
   "details": "In this course, we will use MongoDB, which is a document database designed for ease of development and scaling. The reason we choose this database is because it is easy to learn for people who use JavaScript. Even if you have never used a database or you do not know how to write SQL queries, you should be able to learn MongDB fairly quickly.",
   "location": "online",
-  "date": "2023-12-08",
+  "date": "2023-12-19",
   "start_time": "05:30",
-  "end_time": "08:30",
-  "img": "https://i.imgur.com/BJGyQkn.jpeg",
-  "user_id": {
-    "$oid": "6567c4ab72b1b515701ff2f5"
-  },
-  "host": "justin",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6567e4e3ceec2b445009228c"
-  },
-  "title": "As far",
-  "topic": "General",
-  "details": "as far as the i can see as far as the i can see",
-  "location": "afds",
-  "date": "2023-11-01",
-  "start_time": "09:26",
-  "end_time": "21:26",
-  "img": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg",
+  "end_time": "09:30",
+  "img": "https://i.imgur.com/1537Wb.jpg",
   "user_id": {
     "$oid": "6567c4ab72b1b515701ff2f5"
   },
@@ -94,11 +76,11 @@
   },
   "title": "A filler box",
   "topic": "ITIS-4166",
-  "details": "Elements with a static position are positioned according to the normal flow of the document. This means they will appear in the order they are written in the HTML code. The &#96;top&#96;, &#96;right&#96;, &#96;bottom&#96;, and &#96;left&#96; properties do not affect static elements.\t\r\nExample:",
+  "details": "Elements with a static position are positioned according to the normal flow of the document. This means they will appear in the order they are written in the HTML code. The  properties do not affect static elements.\t\r\nExample:",
   "location": "DUMPSTER",
-  "date": "2023-11-30",
-  "start_time": "18:59",
-  "end_time": "20:59",
+  "date": "2023-12-22",
+  "start_time": "19:00",
+  "end_time": "21:00",
   "img": "https://i.imgur.com/sdQoXvZ.jpeg",
   "user_id": {
     "$oid": "656815c8f58e5c4d4cbf894c"
@@ -116,7 +98,7 @@
   "location": "Student Union",
   "date": "2023-12-06",
   "start_time": "20:02",
-  "end_time": "09:08",
+  "end_time": "23:08",
   "img": "https://i.imgur.com/D9Ob67E.jpeg",
   "user_id": {
     "$oid": "6567c4ab72b1b515701ff2f5"
@@ -132,10 +114,46 @@
   "topic": "MATH-1242",
   "details": "Struggling to pass math, look no further for we can all struggle together.",
   "location": "Student Union",
-  "date": "2023-11-25",
+  "date": "2024-01-05",
   "start_time": "16:07",
   "end_time": "18:07",
   "img": "https://i.imgur.com/9jKBDM6.jpeg",
+  "user_id": {
+    "$oid": "656815c8f58e5c4d4cbf894c"
+  },
+  "host": "KALEB",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656a2f78da8447a8952b16f7"
+  },
+  "title": "Grade Guessor",
+  "topic": "MATH-1242",
+  "details": "This project is intended for you to complete the application you have been working on during this semester. \r\n\r\nFollow the 2\r\nAfter completing the assignment, submit the required files listed in the assignment description.\r\nPut Partner’s name in canvas comment\r\nIf you have questions, please post them on Piazza or come to office hours.\r\n\r\nAssignment late policy : This assignment is due by 11:59 pm on Friday, Dec 1, according to the Canvas system clock (note that this might be different than your clock!).  After this time, the assignment is considered late. An automatic late extension period will be granted until 11:59 pm Monday, Dec 4. Any late work submitted after the deadline (even if it is missed within seconds) will receive a 3%&amp;amp;#x2F;day grade reduction. No submission will be accepted after Dec 4..",
+  "location": "fretwell 142",
+  "date": "2023-12-22",
+  "start_time": "12:00",
+  "end_time": "14:00",
+  "img": "https://i.imgur.com/IYDogui.jpeg",
+  "user_id": {
+    "$oid": "6567c4ab72b1b515701ff2f5"
+  },
+  "host": "justin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656a30647dbb41162c520004"
+  },
+  "title": "Fleep Floop Meep",
+  "topic": "General",
+  "location": "UNCC",
+  "date": "2023-12-22",
+  "start_time": "14:00",
+  "end_time": "15:00",
+  "img": "https://i.imgur.com/B2ewASO.jpeg",
+  "details": "BuyDig has 34&quot; LG 34WQ60C-B Curved UltraWide QHD IPS Monitor w&#x2F; Dual Controller&#x2F;OnScreen Controls on sale for $249 when you apply promo code BFLG34 in cart. Shipping is free.",
   "user_id": {
     "$oid": "656815c8f58e5c4d4cbf894c"
   },
